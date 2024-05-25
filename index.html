@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movie Recommender</h1>
+        <P>Movies Currently available: Toy Story, Mad Max: Fury Road, Harry Potter and the Prisoner of Azkaban, Eat Pray
+            Love, Star Trek Beyond, The Fast and the Furious, Inception, The Godfather, Pulp Fiction, Finding Nemo,
+            Scooby-Doo</P>
+        <input type="text" id="movie-input" placeholder="Enter a movie title...">
+        <button onclick="getRecommendations()">Get Recommendations</button>
+        <ul id="recommendations"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
