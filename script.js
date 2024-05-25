@@ -6,10 +6,8 @@ async function loadJsonFile(filePath) {
     return response.json();
 }
 
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, function (txt) {
-        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
+function toLowerCase(str) {
+    return str.toLowerCase();
 }
 
 async function getRecommendations() {
@@ -24,19 +22,25 @@ async function getRecommendations() {
         return;
     }
 
-    const titleCaseInput = toTitleCase(input);
-    console.log("Transformed movie title:", titleCaseInput);
+    const lowerCaseInput = toLowerCase(input);
+    console.log("Transformed movie title:", lowerCaseInput);
 
     try {
         const movieData = await loadJsonFile('top_10_movies.json');
 
-        if (!movieData[titleCaseInput]) {
+        // Normalize keys in movieData to lowercase for easier comparison
+        const normalizedMovieData = {};
+        for (const key in movieData) {
+            normalizedMovieData[toLowerCase(key)] = movieData[key];
+        }
+
+        if (!normalizedMovieData[lowerCaseInput]) {
             alert('Movie not found');
-            console.log("Available movies:", Object.keys(movieData));
+            console.log("Available movies:", Object.keys(normalizedMovieData));
             return;
         }
 
-        const topRecommendations = movieData[titleCaseInput];
+        const topRecommendations = normalizedMovieData[lowerCaseInput];
 
         topRecommendations.forEach(title => {
             const li = document.createElement('li');
