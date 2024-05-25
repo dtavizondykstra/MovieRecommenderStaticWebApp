@@ -4,7 +4,7 @@ This project implements a basic static web application for recommending movies b
 
 ## Overview
 
-This web app allows users to input a movie title and receive the top 10 movie recommendations based on genres, tags, movie title, and average rating.
+[This web app](https://black-rock-0d6f60310.5.azurestaticapps.net/) allows users to input a movie title and receive the top 10 movie recommendations based on genres, tags, movie title, and average rating.
 
 ## Features
 
