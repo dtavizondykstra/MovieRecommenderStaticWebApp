@@ -4,7 +4,7 @@ This project implements a basic static web application for recommending movies b
 
 ## Overview
 
-[This web app](https://black-rock-0d6f60310.5.azurestaticapps.net/) allows users to input a movie title and receive the top 10 movie recommendations based on genres, tags, movie title, and average rating.
+[This web app](https://black-rock-0d6f60310.5.azurestaticapps.net/) allows users to input a movie title from a pre-computed list and receive the top 10 movie recommendations based on genres, tags, movie title, and average rating.
 
 ## Features
 
@@ -15,7 +15,7 @@ This project implements a basic static web application for recommending movies b
 ## How It Works
 
 1. **Data Preparation**:
-    - Aggregates tags and average rating,  and then combines them with genres and movie title to create a feature set for each movie.
+    - Aggregates tags and average rating for each movie,  and then combines them with the movie genre and title to create a feature set for each movie.
     - Calculates cosine similarity scores between movies.
 
 2. **Recommendation Function**:
